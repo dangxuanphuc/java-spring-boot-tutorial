@@ -2,14 +2,16 @@ package Java;
 
 class Hello {
   public static void main(String args[]) {
-    int a = 6;
+    int a = -6;
 
     if (a > 0) {
       System.out.println("a is positive number");
+    } if (a == 0) {
+      System.out.println("a is zero");
     } else {
-      System.out.println("a is negative number or zero");
+      System.out.println("a is negative number");
     }
 
-    // a is positive number
+    // a is negative number
   }
 }
