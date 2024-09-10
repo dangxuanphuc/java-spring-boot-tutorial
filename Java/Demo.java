@@ -2,36 +2,20 @@ package Java;
 
 class Demo {
   public static void main(String args[]) {
-    int a = 6;
-    String result = "";
+    int a = 1;
 
-    switch (a) {
-      case 1:
-        result = "Monday";
-        break;
-      case 2:
-        result = "Tueday";
-        break;
-      case 3:
-        result = "Wednesday";
-        break;
-      case 4:
-        result = "Thursday";
-        break;
-      case 5:
-        result = "Friday";
-        break;
-      case 6:
-        result = "Saturday";
-        break;
-      case 7:
-        result = "Sunday";
-        break;
-      default:
-        result = "Enter a valid number";
-        break;
+    while (a <= 3) {
+      System.out.println("Hi " + a);
+
+      int b = 1;
+      while (b <= 2) {
+        System.out.println("Hello " + b);
+        b++;
+      }
+
+      a++;
     }
 
-    System.out.println(result); // Saturday
+    System.out.println("Bye " + a);
   }
 }
