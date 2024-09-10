@@ -2,20 +2,13 @@ package Java;
 
 class Demo {
   public static void main(String args[]) {
-    int a = 1;
+    int a = 4;
 
-    while (a <= 3) {
+    do {
       System.out.println("Hi " + a);
-
-      int b = 1;
-      while (b <= 2) {
-        System.out.println("Hello " + b);
-        b++;
-      }
-
       a++;
-    }
+    } while (a <= 3);
 
-    System.out.println("Bye " + a);
+    // Hi 4
   }
 }
