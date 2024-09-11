@@ -1,19 +1,24 @@
 package Java;
 
-class Calculator {
-  public int add(int num1, int num2) {
-    return num1 + num2;
+class Computer {
+  public void playMusic() {
+    System.out.println("Music playing...");
+  }
+
+  public String getMeAPen(int cost) {
+    if (cost >= 10) {
+      return "Pen";
+    }
+    return "Nothing";
   }
 }
 
 class Demo {
   public static void main(String args[]) {
-    int a = 4;
-    int b = 7;
+    Computer com = new Computer();
+    com.playMusic();
 
-    Calculator calc = new Calculator();
-    int result = calc.add(a, b);
-
-    System.out.println(result);
+    String str = com.getMeAPen(20);
+    System.out.println(str);
   }
 }
