@@ -28,8 +28,12 @@ class Demo {
     students[1] = s2;
     students[2] = s3;
 
-    for (int i = 0; i < students.length; i++) {
-      System.out.println(students[i].name + ": " + students[i].age);
+    // for (int i = 0; i < students.length; i++) {
+    //   System.out.println(students[i].name + ": " + students[i].age);
+    // }
+
+    for (Student student : students) {
+      System.out.println(student.name + ": " + student.age);
     }
   }
 }
