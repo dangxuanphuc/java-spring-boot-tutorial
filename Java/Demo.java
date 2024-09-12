@@ -8,16 +8,16 @@ class Human {
     return name;
   }
 
-  public void setName(String n) {
-    name = n;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public int getAge() {
     return age;
   }
 
-  public void setAge(int a) {
-    age = a;
+  public void setAge(int age) {
+    this.age = age;
   }
 }
 
