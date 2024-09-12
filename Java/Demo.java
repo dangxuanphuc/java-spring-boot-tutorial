@@ -1,32 +1,25 @@
 package Java;
 
-class A {
-  public void show() {
-    System.out.println("In A show");
+class Calc {
+  public final void show() {
+    System.out.println("In Calc show");
+  }
+
+  public void add(int a, int b) {
+    System.out.println(a + b);
   }
 }
 
-class B extends A {
-  public void show() {
-    System.out.println("In B show");
-  }
-}
-
-class C extends A {
-  public void show() {
-    System.out.println("In C show");
+class AdvCalc extends Calc {
+  public void show() { // cannot override final method
+    System.out.println("In AdvCalc show");
   }
 }
 
 class Demo {
   public static void main(String args[]) {
-    A obj = new A();
+    AdvCalc obj = new AdvCalc();
     obj.show();
-
-    obj = new B();
-    obj.show();
-
-    obj = new C();
-    obj.show();
+    obj.add(3, 5);
   }
 }
