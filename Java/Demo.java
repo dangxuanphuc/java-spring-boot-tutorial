@@ -1,22 +1,19 @@
 package Java;
 
-class Calc {
-  public int add(int n1, int n2) {
-    return n1 + n2;
-  }
-}
-
-class AdvCalc extends Calc {
-  public int add(int n1, int n2) {
-    return n1 + n2 + 1;
+class B extends A {
+  public void show() {
+    System.out.println(text1);
+    System.out.println(text2);
+    // System.out.println(text3);
   }
 }
 
 class Demo {
   public static void main(String args[]) {
-    AdvCalc obj = new AdvCalc();
+    A obj1 = new A();
+    obj1.show();
 
-    int r1 = obj.add(3, 4);
-    System.out.println(r1);
+    B obj2 = new B();
+    obj2.show();
   }
 }
