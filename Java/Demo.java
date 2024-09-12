@@ -1,25 +1,24 @@
 package Java;
 
 class A {
-  int age;
-
   public void show() {
-    System.out.println("in show");
+    System.out.println("in A show");
   }
+}
 
-  static class B {
-    public void config() {
-      System.out.println("in config");
-    }
+class B extends A {
+  public void show() {
+    System.out.println("in B show");
   }
 }
 
 class Demo {
   public static void main(String args[]) {
-    A obj = new A();
+    A obj = new A() {
+      public void show() {
+        System.out.println("in new show");
+      }
+    };
     obj.show();
-
-    A.B obj1 = new A.B();
-    obj1.config();
   }
 }
