@@ -1,33 +1,27 @@
 package Java;
 
-interface Computer {
-  public void code();
-}
+enum Laptop {
+  Macbook(2000), Dell(1800), Surface;
 
-class Laptop implements Computer {
-  public void code() {
-    System.out.println("Code, compile, run");
+  private int price;
+
+  private Laptop() {
+    price = 500;
   }
-}
 
-class Desktop implements Computer {
-  public void code() {
-    System.out.println("Code, compile, run : faster");
+  private Laptop(int price) {
+    this.price = price;
   }
-}
 
-class Developer {
-  public void devApp(Computer com) {
-    com.code();
+  public int getPrice() {
+    return price;
   }
 }
 
 class Demo {
   public static void main(String args[]) {
-    Developer dev = new Developer();
-    Computer lap = new Laptop();
-    Computer desk = new Desktop();
-
-    dev.devApp(desk);
+    for(Laptop lap : Laptop.values()) {
+      System.out.println(lap + ": " + lap.getPrice());
+    }
   }
 }
