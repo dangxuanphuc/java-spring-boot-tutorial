@@ -1,27 +1,14 @@
 package Java;
 
-enum Laptop {
-  Macbook(2000), Dell(1800), Surface;
-
-  private int price;
-
-  private Laptop() {
-    price = 500;
-  }
-
-  private Laptop(int price) {
-    this.price = price;
-  }
-
-  public int getPrice() {
-    return price;
-  }
+@FunctionalInterface
+interface A {
+  int add(int i, int j);
 }
 
 class Demo {
   public static void main(String args[]) {
-    for(Laptop lap : Laptop.values()) {
-      System.out.println(lap + ": " + lap.getPrice());
-    }
+    A obj = (int i, int j) -> i + j;
+    int result = obj.add(5, 6);
+    System.out.println(result);
   }
 }
