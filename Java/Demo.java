@@ -9,6 +9,16 @@ class Human {
     age = 24;
   }
 
+  public Human(String name) {
+    this.name = name;
+    this.age = 22;
+  }
+
+  public Human(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+
   public String getName() {
     return name;
   }
@@ -29,9 +39,13 @@ class Human {
 class Demo {
   public static void main(String args[]) {
     Human h = new Human();
+    Human h1 = new Human("Phucdx1");
+    Human h2 = new Human("Phucdx2", 26);
     // h.setAge(26);
     // h.setName("Phucdx");
 
     System.out.println(h.getName() + " " + h.getAge());
+    System.out.println(h1.getName() + " " + h1.getAge());
+    System.out.println(h2.getName() + " " + h2.getAge());
   }
 }
