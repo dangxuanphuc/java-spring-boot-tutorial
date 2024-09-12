@@ -4,6 +4,11 @@ class Human {
   private String name;
   private int age;
 
+  public Human() {
+    name = "Phucdx";
+    age = 24;
+  }
+
   public String getName() {
     return name;
   }
@@ -24,8 +29,8 @@ class Human {
 class Demo {
   public static void main(String args[]) {
     Human h = new Human();
-    h.setAge(26);
-    h.setName("Phucdx");
+    // h.setAge(26);
+    // h.setName("Phucdx");
 
     System.out.println(h.getName() + " " + h.getAge());
   }
