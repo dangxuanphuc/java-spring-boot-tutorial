@@ -1,19 +1,32 @@
 package Java;
 
+class A {
+  public void show() {
+    System.out.println("In A show");
+  }
+}
+
 class B extends A {
   public void show() {
-    System.out.println(text1);
-    System.out.println(text2);
-    // System.out.println(text3);
+    System.out.println("In B show");
+  }
+}
+
+class C extends A {
+  public void show() {
+    System.out.println("In C show");
   }
 }
 
 class Demo {
   public static void main(String args[]) {
-    A obj1 = new A();
-    obj1.show();
+    A obj = new A();
+    obj.show();
 
-    B obj2 = new B();
-    obj2.show();
+    obj = new B();
+    obj.show();
+
+    obj = new C();
+    obj.show();
   }
 }
