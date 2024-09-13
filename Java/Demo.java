@@ -1,22 +1,21 @@
 package Java;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
 
 class Demo {
   public static void main(String args[]) {
-    List<Integer> nums = new ArrayList<Integer>();
+    Set<Integer> nums = new TreeSet<Integer>();
+    nums.add(9);
     nums.add(6);
     nums.add(2);
-    nums.add(9);
     nums.add(7);
 
-    System.out.println(nums.get(0));
-    System.out.println(nums.indexOf(9));
+    Iterator<Integer> values = nums.iterator();
 
-    for (int n : nums) {
-      System.out.print(n * 2 + " ");
+    while(values.hasNext()) {
+      System.out.println(values.next());
     }
   }
 }
