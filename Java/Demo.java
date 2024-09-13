@@ -2,22 +2,19 @@ package Java;
 
 class Demo {
   public static void main(String args[]) {
-    int i = 2;
+    int i = 20;
     int j = 0;
-    int nums[] = new int[5];
-    String str = null;
 
     try {
       j = 18 / i;
-      System.out.println(str.length());
-      System.out.println(nums[1]);
-      System.out.println(nums[5]);
+      if (j == 0) {
+        throw new ArithmeticException("I dont want to print zero");
+      }
     } catch (ArithmeticException e) {
-      System.out.println("Cannot devide by zero");
-    } catch (ArrayIndexOutOfBoundsException e) {
-      System.out.println("Stay in your limit");
+      j = 18 / 1;
+      System.out.println("Thats the default output " + e);
     } catch (Exception e) {
-      System.out.println("Something went wrong...");
+      System.out.println("Something went wrong..." + e);
     }
 
     System.out.println(j);
