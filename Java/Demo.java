@@ -1,28 +1,26 @@
 package Java;
 
-class CustomException extends RuntimeException {
-  public CustomException(String string) {
-    super(string);
-  }
-}
-
-class A {
-  public void show() throws ClassNotFoundException {
-    Class.forName("Java");
-  }
-}
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 class Demo {
-  static {
-    System.out.println("Class Loaded");
-  }
+  public static void main(String args[]) throws IOException {
+    System.out.print("Enter a number: ");
 
-  public static void main(String args[]) {
-    A obj = new A();
-    try {
-      obj.show();
-    } catch (ClassNotFoundException e) {
-      e.printStackTrace();
-    }
+    InputStreamReader in = new InputStreamReader(System.in);
+    BufferedReader br = new BufferedReader(in);
+
+    int num = Integer.parseInt(br.readLine());
+    System.out.println(num);
+    br.close();
+
+    System.out.print("Enter an another number: ");
+
+    Scanner sc = new Scanner(System.in);
+    int num2 = Integer.parseInt(sc.nextLine());
+    System.out.println(num2);
+    sc.close();
   }
 }
