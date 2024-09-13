@@ -1,51 +1,25 @@
 package Java;
 
-// class A implements Runnable {
-//   public void run() {
-//     for (int i = 0; i < 5; i++) {
-//       System.out.println("Hi");
-//       try {
-//         Thread.sleep(10);
-//       } catch (InterruptedException e) {
-//         e.printStackTrace();
-//       }
-//     }
-//   }
-// }
+class Counter {
+  int count;
 
-// class B implements Runnable {
-// public void run() {
-// for (int i = 0; i < 5; i++) {
-// System.out.println("Hello");
-// try {
-// Thread.sleep(10);
-// } catch (InterruptedException e) {
-// e.printStackTrace();
-// }
-// }
-// }
-// }
+  public synchronized void increment() {
+    count++;
+  }
+}
 
 class Demo {
-  public static void main(String args[]) {
+  public static void main(String args[]) throws InterruptedException {
+    Counter c = new Counter();
+
     Runnable obj1 = () -> {
-      for (int i = 0; i <= 5; i++) {
-        System.out.println("Hi");
-        try {
-          Thread.sleep(10);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+      for (int i = 0; i < 1000; i++) {
+        c.increment();
       }
     };
     Runnable obj2 = () -> {
-      for (int i = 0; i <= 5; i++) {
-        System.out.println("Hello");
-        try {
-          Thread.sleep(10);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+      for (int i = 0; i < 1000; i++) {
+        c.increment();
       }
     };
 
@@ -54,5 +28,11 @@ class Demo {
 
     t1.start();
     t2.start();
+
+    t1.join();
+    t2.join();
+
+    System.out.println(c.count);
+
   }
 }
