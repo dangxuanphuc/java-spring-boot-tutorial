@@ -9,12 +9,16 @@ public class App {
     public static void main( String[] args ) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Desktop dt = context.getBean(Desktop.class);
-        dt.compile();
+//        Desktop dt = context.getBean(Desktop.class);
+//        dt.compile();
+//
+//        Desktop dt2 = context.getBean(Desktop.class);
+//        dt.compile();
 
-        Desktop dt2 = context.getBean(Desktop.class);
-        dt.compile();
 
+        Alien obj1 = context.getBean(Alien.class);
+        System.out.println(obj1.getAge());
+        obj1.code();
 
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
