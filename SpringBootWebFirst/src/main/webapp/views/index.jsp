@@ -12,12 +12,12 @@
 <body>
     <h2>Phucdx Calculator</h2>
 
-    <form action="add">
-        <label for="num1">Enter 1st Number: </label>
-        <input type="text" id="num1" name="num1"><br>
+    <form action="addAlien">
+        <label for="id">Enter ID: </label>
+        <input type="text" id="id" name="id"><br>
 
-        <label for="num2">Enter 2nd Number: </label>
-        <input type="text" id="num2" name="num2"><br>
+        <label for="name">Enter Name: </label>
+        <input type="text" id="name" name="name"><br>
 
         <input type="submit" value="Submit"><br>
     </form>

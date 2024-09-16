@@ -10,6 +10,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Result is: ${result}</h2>
+    <h2>Welcome to Phucdx</h2>
+    <h2>${alien}</h2>
+    <h2>Welcome to the ${course} World</h2>
 </body>
 </html>
