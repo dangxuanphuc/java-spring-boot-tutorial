@@ -1,4 +1,4 @@
-package com.phucdx.app;
+package com.phucdx.app.model;
 
 public interface Computer {
     void compile();

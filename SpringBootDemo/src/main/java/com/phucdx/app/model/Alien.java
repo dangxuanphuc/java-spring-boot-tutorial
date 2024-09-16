@@ -1,4 +1,4 @@
-package com.phucdx.app;
+package com.phucdx.app.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
