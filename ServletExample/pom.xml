@@ -25,14 +25,14 @@
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>6.0.0</version>
+      <version>4.0.4</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-core</artifactId>
-      <version>10.1.25</version>
+      <version>8.5.100</version>
     </dependency>
   </dependencies>
 </project>
