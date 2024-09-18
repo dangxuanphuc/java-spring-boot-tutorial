@@ -1,5 +1,6 @@
 package com.phucdx.spring_boot_rest.model;
 
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Component
 public class JobPost {
+    @Id
     private int id;
     private String postProfile;
     private String postDesc;
