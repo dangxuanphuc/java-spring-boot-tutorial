@@ -1,7 +1,7 @@
 package com.phucdx.spring_boot_rest.service;
 
-import com.phucdx.JobApp.model.JobPost;
-import com.phucdx.JobApp.repo.JobRepo;
+import com.phucdx.spring_boot_rest.model.JobPost;
+import com.phucdx.spring_boot_rest.repo.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

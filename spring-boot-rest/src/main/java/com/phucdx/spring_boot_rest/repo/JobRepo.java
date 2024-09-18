@@ -1,6 +1,6 @@
 package com.phucdx.spring_boot_rest.repo;
 
-import com.phucdx.JobApp.model.JobPost;
+import com.phucdx.spring_boot_rest.model.JobPost;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
