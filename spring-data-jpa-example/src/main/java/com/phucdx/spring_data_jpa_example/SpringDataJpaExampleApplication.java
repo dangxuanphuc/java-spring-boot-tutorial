@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.Optional;
+
 @SpringBootApplication
 public class SpringDataJpaExampleApplication {
 	public static void main(String[] args) {
@@ -32,6 +34,10 @@ public class SpringDataJpaExampleApplication {
 //		repo.save(s2);
 //		repo.save(s3);
 
-		System.out.println(repo.findAll());
+//		System.out.println(repo.findAll());
+//		System.out.println(repo.findById(2));
+
+		Optional<Student> s = repo.findById(5);
+		System.out.println(s.orElse(new Student()));
 	}
 }
