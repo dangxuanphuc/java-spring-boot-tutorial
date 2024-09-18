@@ -20,7 +20,15 @@ public class JobService {
         return repo.getAllJobs();
     }
 
-    public JobPost getJob(int i) {
-        return repo.getJob(i);
+    public JobPost getJob(int jobId) {
+        return repo.getJob(jobId);
+    }
+
+    public void updateJob(JobPost jobPost) {
+        repo.updateJob(jobPost);
+    }
+
+    public void remove(int jobId) {
+        repo.removeJob(jobId);
     }
 }

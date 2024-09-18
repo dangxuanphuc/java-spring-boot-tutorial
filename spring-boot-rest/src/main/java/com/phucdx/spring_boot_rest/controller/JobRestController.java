@@ -12,6 +12,8 @@ import java.util.List;
 public class JobRestController {
     @Autowired
     private JobService service;
+    @Autowired
+    private JobPost jobPost;
 
     @GetMapping("jobPosts")
     @ResponseBody
@@ -28,5 +30,17 @@ public class JobRestController {
     public JobPost addJob(@RequestBody JobPost jobPost) {
         service.addJob(jobPost);
         return service.getJob(jobPost.getId());
+    }
+
+    @PutMapping("jobPost")
+    public JobPost updateJob(@RequestBody JobPost jobPost) {
+        service.updateJob(jobPost);
+        return service.getJob(jobPost.getId());
+    }
+
+    @DeleteMapping("jobPost/{jobId}")
+    public String deleteJob(@PathVariable("jobId") int jobId) {
+        service.remove(jobId);
+        return "Deleted";
     }
 }
