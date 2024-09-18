@@ -94,8 +94,8 @@ const handleEdit = (id) => {
                     </Typography>
                   );
                 })}
-               <DeleteIcon onClick={() => handleDelete(p.postId)} />
-                <EditIcon onClick={() => handleEdit(p.postId)} />
+               <DeleteIcon onClick={() => handleDelete(p.id)} />
+                <EditIcon onClick={() => handleEdit(p.id)} />
               </Card>
             </Grid>
           );

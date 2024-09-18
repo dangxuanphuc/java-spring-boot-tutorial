@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "postId": 1,
+      "id": 1,
       "postProfile": "Java Developer",
       "postDesc": "Need to work on ORM, Spring, Web, AOP, REST API",
       "reqExperience": 3,
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "postId": 2,
+      "id": 2,
       "postProfile": "R Developer",
       "postDesc": "Need to work on ORM, Spring, Web, AOP, REST API",
       "reqExperience": 3,
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "postId": 3,
+      "id": 3,
       "postProfile": "Ts Developer",
       "postDesc": "Need to work on ORM, Spring, Web, AOP, REST API",
       "reqExperience": 3,

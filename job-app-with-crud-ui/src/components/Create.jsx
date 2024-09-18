@@ -8,7 +8,7 @@ import {
   Box,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-const initial = { postId:"",postProfile: "", reqExperience: 0, postTechStack: [], postDesc:"" };
+const initial = { id:"",postProfile: "", reqExperience: 0, postTechStack: [], postDesc:"" };
 
 
 const Create = () => {
@@ -47,13 +47,13 @@ const Create = () => {
     };
 
 
-  const { postId, postProfile, reqExperience, postDesc } = form;
+  const { id, postProfile, reqExperience, postDesc } = form;
 
   const handleChange = (e) => {
     setForm({...form , postTechStack : [...form.postTechStack, e.target.value]});
   }
 
-  
+
 
   return (
     <Paper sx={{ padding:"1%"}} elevation={0}>
@@ -72,11 +72,11 @@ const Create = () => {
             min="0"
             type="number"
             sx={{ width: "50%", margin: "2% auto" }}
-            
-            onChange={(e) => setForm({ ...form, postId: e.target.value })}
+
+            onChange={(e) => setForm({ ...form, id: e.target.value })}
             label="Enter your Post ID"
             variant="outlined"
-            value={postId}
+            value={id}
           />
           <TextField
             type="string"
@@ -121,7 +121,7 @@ const Create = () => {
                     id={`custom-checkbox-${index}`}
                     name={name}
                     value={name}
-                    onChange={handleChange}  
+                    onChange={handleChange}
                   />
                   <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
                 </div>
@@ -129,7 +129,7 @@ const Create = () => {
             </li>
           );
         })}
-       
+
       </ul>
           </Box>
           <Button

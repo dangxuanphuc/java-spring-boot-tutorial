@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const initial = {
-  postId: "",
+  id: "",
   postProfile: "",
   reqExperience: 0,
   postTechStack: [],
@@ -17,9 +17,12 @@ const Edit = () => {
   const [form, setForm] = useState(initial);
   const [currId] = useState(location.state.id);
 
+  console.log(location);
+
+
 
   useEffect(() => {
-    const fetchInitialPosts = async (id) => {  
+    const fetchInitialPosts = async (id) => {
       const response = await axios.get(`http://localhost:8080/jobPost/${id}`);
       console.log(response.data);
       setForm(response.data);
@@ -29,7 +32,7 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios      
+    axios
       .put("http://localhost:8080/jobPost",form)
       .then((resp) => {
         console.log(resp.data);
@@ -80,10 +83,10 @@ const Edit = () => {
             min="0"
             type="number"
             sx={{ width: "50%", margin: "2% auto" }}
-            onChange={(e) => setForm({ ...form, postId: e.target.value })}
+            onChange={(e) => setForm({ ...form, id: e.target.value })}
             label="Enter your Post ID"
             variant="outlined"
-            value={form.postId}
+            value={form.id}
           />
           <TextField
             type="string"
@@ -146,7 +149,7 @@ const Edit = () => {
             sx={{ width: "50%", margin: "2% auto" }}
             variant="contained"
             type="submit"
-          
+
           >
             Submit
           </Button>
