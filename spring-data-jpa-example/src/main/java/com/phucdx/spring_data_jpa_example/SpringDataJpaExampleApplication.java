@@ -17,7 +17,7 @@ public class SpringDataJpaExampleApplication {
 
 //		Student s1 = context.getBean(Student.class);
 //		Student s2 = context.getBean(Student.class);
-//		Student s3 = context.getBean(Student.class);
+		Student s3 = context.getBean(Student.class);
 //
 //		s1.setId(1);
 //		s1.setName("John");
@@ -27,9 +27,9 @@ public class SpringDataJpaExampleApplication {
 //		s2.setName("Jane");
 //		s2.setAge(27);
 //
-//		s3.setId(3);
-//		s3.setName("Mary");
-//		s3.setAge(18);
+		s3.setId(3);
+		s3.setName("Mary");
+		s3.setAge(39);
 //
 //		repo.save(s2);
 //		repo.save(s3);
@@ -40,8 +40,11 @@ public class SpringDataJpaExampleApplication {
 //		Optional<Student> s = repo.findById(5);
 //		System.out.println(s.orElse(new Student()));
 
-		System.out.println(repo.findByName("Jane"));
-		System.out.println(repo.findByAge(18));
-		System.out.println(repo.findByAgeGreaterThan(18));
+//		System.out.println(repo.findByName("Jane"));
+//		System.out.println(repo.findByAge(18));
+//		System.out.println(repo.findByAgeGreaterThan(18));
+
+//		repo.save(s3);
+		repo.delete(s3);
 	}
 }
