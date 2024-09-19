@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("hello")
     public String greet(HttpServletRequest request) {
-        return "Hello Spring Security" + request.getSession().getId();
+        return "Hello Spring Security " + request.getSession().getId();
     }
 
     @GetMapping("about")
     public String about(HttpServletRequest request) {
-        return "About" + request.getSession().getId();
+        return "About " + request.getSession().getId();
     }
 }
