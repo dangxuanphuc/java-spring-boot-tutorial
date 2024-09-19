@@ -36,7 +36,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
       setShowSearchResults(true)
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/products/search?name=${value}`
+        `http://localhost:8080/api/products/search?keyword=${value}`
       );
       setSearchResults(response.data);
       setNoResults(response.data.length === 0);
@@ -163,7 +163,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
                 />
                 {showSearchResults && (
                   <ul className="list-group">
-                    {searchResults.length > 0 ? (  
+                    {searchResults.length > 0 ? (
                         searchResults.map((result) => (
                           <li key={result.id} className="list-group-item">
                             <a href={`/product/${result.id}`} className="search-result-link">
