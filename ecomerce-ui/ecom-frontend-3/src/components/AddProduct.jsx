@@ -33,6 +33,7 @@ const AddProduct = () => {
       new Blob([JSON.stringify(product)], { type: "application/json" })
     );
 
+
     axios
       .post("http://localhost:8080/api/product", formData, {
         headers: {
@@ -108,7 +109,7 @@ const AddProduct = () => {
             id="price"
           />
         </div>
-     
+
            <div className="col-md-6">
           <label className="form-label">
             <h6>Category</h6>

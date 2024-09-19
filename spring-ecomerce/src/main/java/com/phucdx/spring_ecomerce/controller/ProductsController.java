@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -25,5 +27,16 @@ public class ProductsController {
     public ResponseEntity<Product> getProduct(@PathVariable("id") int id) {
         Product product = service.getProductById(id);
         return product.getId() > 0 ? new ResponseEntity<>(product, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/product")
+    public ResponseEntity<?> addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
+        Product savedProduct = null;
+        try {
+            savedProduct = service.addProduct(product, imageFile);
+            return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
+        } catch (IOException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
