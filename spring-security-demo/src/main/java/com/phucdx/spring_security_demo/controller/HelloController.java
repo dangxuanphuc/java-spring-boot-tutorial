@@ -1,4 +1,4 @@
-package com.phucdx.spring_security_demo;
+package com.phucdx.spring_security_demo.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
