@@ -5,10 +5,7 @@ import com.phucdx.spring_ecomerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +19,11 @@ public class ProductsController {
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getProducts() {
         return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
+    }
+
+    @GetMapping("/product/{id}")
+    public ResponseEntity<Product> getProduct(@PathVariable("id") int id) {
+        Product product = service.getProductById(id);
+        return product.getId() > 0 ? new ResponseEntity<>(product, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

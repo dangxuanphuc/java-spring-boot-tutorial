@@ -4,12 +4,13 @@ import axios from "../axios";
 
 const Product = () => {
   const { id } = useParams();
-const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/api/product/${id}`);
+
         setProduct(response.data);
         console.log(response.data);
       } catch (error) {
@@ -66,11 +67,11 @@ const [product, setProduct] = useState(null);
             <button
               className="btn btn-primary"
               type="button"
-          
+
             >
               Update
             </button>
-        
+
             <button
               className="btn btn-primary"
               type="button"
