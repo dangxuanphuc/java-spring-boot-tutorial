@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - s_network
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: phucdx
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: wataridori
+    ports:
+      - 5434:5432
+    networks:
+      - s_network
+
+networks:
+  s_network:
+    driver: bridge
