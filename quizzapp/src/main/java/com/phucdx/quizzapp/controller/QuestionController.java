@@ -1,14 +1,30 @@
 package com.phucdx.quizzapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.phucdx.quizzapp.model.Question;
+import com.phucdx.quizzapp.service.QuestionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("question")
 public class QuestionController {
+    @Autowired
+    private QuestionService questionService;
+
     @GetMapping("allQuestions")
-    public String allQuestions() {
-        return "Hi, These are your questions";
+    public List<Question> allQuestions() {
+        return questionService.getAllQuestions();
+    }
+
+    @GetMapping("category/{category}")
+    public List<Question> getQuestionsByCategory(@PathVariable String category) {
+        return questionService.getQuestionsByCategory(category);
+    }
+
+    @PostMapping("addQuestion")
+    public String addQuestion(@RequestBody Question question) {
+        return questionService.addQuestion(question);
     }
 }
